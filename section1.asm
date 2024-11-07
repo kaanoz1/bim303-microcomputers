@@ -1,0 +1,41 @@
+MOV SI, 3000H
+
+MOV [SI], 1 
+
+ADD SI,1 
+
+MOV [SI], 3H
+
+ADD SI, 1 
+
+MOV [SI], 5H
+
+ADD SI,1  
+
+MOV [SI], 7H 
+
+ADD SI, 1  
+
+MOV [SI], 9H
+
+MOV SI, 3010H
+
+MOV [SI], 2H
+
+ADD SI,1 
+
+MOV [SI], 4H
+
+ADD SI, 1   
+
+MOV [SI], 6H
+
+ADD SI,1
+
+MOV [SI], 8H
+
+ADD SI, 1  
+
+MOV [SI],0AH
+
+RET
