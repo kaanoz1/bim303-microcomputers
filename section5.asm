@@ -69,9 +69,8 @@ is_prime:
                
 
 print:          
-    MOV [SI + BP], BH
+    MOV [SI + BP], BX
     INC BP
-    MOV [SI + BP], BL
     INC BP              
 
 continue:            
