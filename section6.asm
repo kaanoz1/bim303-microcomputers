@@ -1,4 +1,3 @@
-
 org 100h
 
 AGAIN:
@@ -26,6 +25,11 @@ GETWORD:
  INT 16H
  CMP AL,0DH
  JE PRINT
+ 
+ CMP AL, 61h
+ JB GETWORD      
+ CMP AL, 7Ah
+ JA GETWORD      
  MOV AH,0EH
  INT 10H
  MOV ARR[DI],AL
@@ -37,9 +41,9 @@ PRINT:
  LEA DX, MSGPRINT
  MOV AH,9
  INT 21H
- MOV DI,0
-
-LEA SI,CLOSE
+ MOV DI,0 
+ 
+ LEA SI,CLOSE
 LEA DI,ARR
  
 CHECK_CLOSE:
@@ -163,10 +167,10 @@ MOV [DI], "$"
     MOV AH, 09H
     INT 21H
    
-MOV AH, 02H      ; DOS interrupt to output a single character
-MOV DL, 0DH      ; Carriage return
+MOV AH, 02H      
+MOV DL, 0DH      
 INT 21H
-MOV DL, 0AH      ; Line feed
+MOV DL, 0AH      
 INT 21H
 
 
