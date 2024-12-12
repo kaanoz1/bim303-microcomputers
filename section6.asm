@@ -5,7 +5,7 @@ MOV COUNT,30H
 MOV RESULT, 0
 MOV RESULT_LENGTH,0
 LEA DI, ARR       
-MOV CX, 26       
+MOV CX, 100       
 RESET_LOOP:
     MOV BYTE PTR [DI], 0
     INC DI               
@@ -177,8 +177,6 @@ INT 21H
 JMP AGAIN    
 
 HLT_PROGRAM:
-MOV AH, 4CH                 
-    INT 21H
 
 TAKEONE PROC
 
@@ -226,7 +224,7 @@ INC_COUNT ENDP
     
 
 
-ARR DB 26 DUP(0)
+ARR DB 100 DUP(0)
 MSG DB "ENTER INPUT:$"
 MSGPRINT DB " > $"
 NEWLINE DB 13,10,"$"
